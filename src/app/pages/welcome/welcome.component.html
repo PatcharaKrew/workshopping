@@ -1,0 +1,55 @@
+<div class="main">
+  <div class="left">
+    <img src="https://www.suanjinda.com/images/ready-template/crop-1656410073174.png" alt="">
+  </div>
+  <div class="right">
+    <div class="right-info">
+      <h1>เข้าสู่ระบบ</h1>
+      <!-- nz-form [nzLayout]="'horizontal'" -->
+      <form >
+        <nz-form-item class="from-control">
+          <nz-form-control nzErrorTip="Please input your username!">
+            <label for="user">Username</label>
+            <nz-input-group nzPrefixIcon="user">
+              <input type="text" nz-input formControlName="userName" placeholder="Username" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="from-control">
+          <nz-form-control nzErrorTip="Please input your Password!">
+            <label for="pass">Password</label>
+            <nz-input-group nzPrefixIcon="lock">
+              <input type="password" nz-input formControlName="password" placeholder="Password" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <div class="sign-in">
+          <button type="submit" (click)="onClick()">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <form action="*" class="login-form">
+  <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your username!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="text" nz-input formControlName="userName" placeholder="Username" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" placeholder="Password" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div nz-row class="login-form-margin">
+
+    </div>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+</form> -->

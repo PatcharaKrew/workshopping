@@ -1,0 +1,14 @@
+<section class = "body" *ngIf="HomeService.PRO.length>=0">
+  <div class="product-container">
+      <div class="product-image">
+          <img src="{{HomeService.PRO[index].img}}" alt="Product Image">
+      </div>
+      <div class="product-details">
+          <h1 class="product-title">{{HomeService.PRO[index].name}}</h1>
+          <p class="product-description">{{HomeService.PRO[index].data}}</p>
+          <p class="product-stock">In Stock: <span>{{HomeService.PRO[index].stock}}</span></p>
+          <p class="product-price">${{HomeService.PRO[index].price}}</p>
+          <button class="buy-button">Add to Cart</button>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+<header>
+  <div class="logo">WebShopping</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a (click)="showModal()">AddProduct</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="cart">
+    <a href="#">Cart (0)</a>
+  </div>
+</header>
+
+<!-- <button (click)="showModal()">Add Product</button> -->
+<nz-modal
+  [(nzVisible)]="isVisible"
+  (nzOnCancel)="handleCancel()"
+  [nzFooter]="null"
+  id="mymodal"
+>
+  <ng-container *nzModalContent>
+    <div class="container">
+      <h1>Add Product</h1>
+      <form id="productForm">
+        <div class="form-group">
+          <label for="productName">Product Name:</label>
+          <input
+            [(ngModel)]="ProductName"
+            type="text"
+            id="productName"
+            name="productName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Price:</label>
+          <input
+            [(ngModel)]="ProductPrice"
+            type="number"
+            id="productPrice"
+            name="productPrice"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Information Product</label>
+          <textarea
+            nz-input
+            [(ngModel)]="ProductData"
+            name="productData"
+            id="productData"
+            type="number"
+            [nzAutosize]="{ minRows: 4, maxRows: 4 }"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="ProductStock">ProductStock</label>
+          <input
+            nz-input
+            [(ngModel)]="ProductStock"
+            name="productStock"
+            id="productStock"
+            type="number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ProductImg">Product Image</label>
+          <input
+            nz-input
+            [(ngModel)]="ProductImg"
+            name="productImg"
+            id="productImg"
+            type="text"
+          />
+        </div>
+
+        <button type="submit" (click)="onAdd()">Add Product</button>
+      </form>
+    </div>
+  </ng-container>
+</nz-modal>
+
+
+
+<section class="products" *ngFor="let i of HomeService.PRO; index as j">
+<div (click)="HomeService.onInfo(j)" class="product">
+  <img
+    src="{{i.img}}"
+    alt="Product 1"
+  />
+  <h2>{{ i.name }}</h2>
+  <p>{{ i.data }}</p>
+  <p>Stock : {{ i.stock }}</p>
+  <p>{{ i.price }}$</p>
+  <button (click)="HomeService.onDelete(j)">Dele Product</button>
+  <button>Edit Product</button>
+</div>
+</section>
